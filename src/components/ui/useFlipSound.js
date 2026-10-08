@@ -12,7 +12,7 @@ export function useFlipSound() {
     if (first.current) { first.current = false; return; }
     if (!on) return;
     try {
-      audio.current ||= new Audio("/audios/page-flip-01a.mp3");
+      audio.current ||= new Audio(`${import.meta.env.BASE_URL}audios/page-flip-01a.mp3`);
       audio.current.currentTime = 0;
       audio.current.play()?.catch(() => {});
     } catch { /* sem áudio: ignora */ }

@@ -4,7 +4,7 @@
  */
 export const MM = 0.01;
 
-export const PDF_URL = "/book/guia.pdf";
+export const PDF_URL = `${import.meta.env.BASE_URL}book/guia.pdf`;
 
 export const BOOK_SPEC = {
   /** Formato fechado A5 (refilado). */

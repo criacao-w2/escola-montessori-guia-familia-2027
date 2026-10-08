@@ -8,7 +8,7 @@ export const BRAND = {
   title: "Guia da Família 2027",
   /** Arquivo em /public. Substitua o arquivo ou altere este caminho. */
   logo: {
-    src: "/brand/logo.png",
+    src: `${import.meta.env.BASE_URL}brand/logo.png`,
     alt: "Escola Montessori",
     height: 56, // px (desktop)
     heightMobile: 40, // px
