@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-primary: #14268a;
+  --brand-bg: #0d0f2b;
+  --brand-bg-soft: #15183f;
+  --brand-accent: #ffa637;
+  --brand-text: #f4f3fa;
+  --brand-text-muted: #aeb0d4;
+  --brand-nav-text: #ffffff;
+  --brand-nav-bg: rgba(0, 0, 0, 0.3);
+  --brand-nav-border: transparent;
+  --brand-nav-active-bg: #ffa637;
+  --brand-nav-active-text: #10123a;
+  --brand-font: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--brand-bg);
+  color: var(--brand-text);
+  font-family: var(--brand-font);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+/* fundo como no projeto original: gradiente radial, agora nas cores da marca */
+#root {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(var(--brand-primary), var(--brand-bg) 80%);
+}
+canvas { outline: none; touch-action: none; }
+
+@layer components {
+  /* botões "fantasma": só o ícone, discreto, acende ao passar o mouse */
+  .ui-ghost {
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: 9999px;
+    transition: color 0.25s ease, background-color 0.25s ease, opacity 0.25s ease;
+  }
+  .ui-ghost:hover:not(:disabled) { color: rgba(255, 255, 255, 0.95); }
+  .ui-ghost:focus-visible { outline: 1px solid var(--brand-accent); outline-offset: 2px; }
+  /* painéis (busca, ficha técnica) */
+  .ui-panel {
+    background: rgba(13, 15, 43, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  }
+  .chip {
+    @apply shrink-0 rounded-full border px-3.5 py-2 text-[11px] font-semibold uppercase tracking-wider transition-colors duration-200 whitespace-nowrap;
+    color: var(--brand-nav-text);
+    background: var(--brand-nav-bg);
+    border-color: var(--brand-nav-border);
+    backdrop-filter: blur(6px);
+  }
+  .chip:hover { border-color: var(--brand-text); }
+  .chip-active {
+    background: var(--brand-nav-active-bg);
+    color: var(--brand-nav-active-text);
+    border-color: transparent;
+  }
+  .icon-btn {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-full border transition-colors duration-200;
+    color: var(--brand-nav-text);
+    background: var(--brand-nav-bg);
+    border-color: var(--brand-nav-border);
+    backdrop-filter: blur(6px);
+  }
+  .icon-btn:hover:not(:disabled) { border-color: var(--brand-text); color: var(--brand-text); }
+  .icon-btn:disabled { opacity: 0.35; cursor: default; }
+  .text-btn {
+    @apply inline-flex h-10 items-center gap-2 rounded-full border px-4 text-[12px] font-semibold uppercase tracking-wider transition-colors duration-200;
+    color: var(--brand-nav-text);
+    background: var(--brand-nav-bg);
+    border-color: var(--brand-nav-border);
+    backdrop-filter: blur(6px);
+  }
+  .text-btn:hover { border-color: var(--brand-text); color: var(--brand-text); }
+  .focus-ring:focus-visible, .chip:focus-visible, .icon-btn:focus-visible, .text-btn:focus-visible {
+    outline: 2px solid var(--brand-accent);
+    outline-offset: 2px;
+  }
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+}

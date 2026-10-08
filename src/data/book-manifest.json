@@ -1,0 +1,233 @@
+{
+  "generatedFrom": "guia.pdf",
+  "pageCount": 86,
+  "printedOffset": 1,
+  "firstPrintedFilePage": 2,
+  "lastPrintedFilePage": 85,
+  "summary": {
+    "filePage": 4,
+    "lastFilePage": 5
+  },
+  "pageSizePt": {
+    "width": 436.535,
+    "height": 612.283
+  },
+  "chapters": [
+    {
+      "id": "01",
+      "label": "COMUNIDADE",
+      "title": "Bem-vindos à nossa comunidade.",
+      "printedRef": 6,
+      "filePage": 6,
+      "fileEnd": 9,
+      "printedPage": 5,
+      "subsections": [
+        {
+          "title": "Quem somos.",
+          "filePage": 8,
+          "printedPage": 7
+        },
+        {
+          "title": "A parceria que transforma a educação.",
+          "filePage": 9,
+          "printedPage": 8
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "label": "MONTESSORI",
+      "title": "Descubra o mundo Montessori.",
+      "printedRef": 10,
+      "filePage": 10,
+      "fileEnd": 13,
+      "printedPage": 9,
+      "subsections": [
+        {
+          "title": "Nossa filosofia e método.",
+          "filePage": 11,
+          "printedPage": 10
+        },
+        {
+          "title": "Áreas do conhecimento.",
+          "filePage": 12,
+          "printedPage": 11
+        },
+        {
+          "title": "Pilares Montessori.",
+          "filePage": 13,
+          "printedPage": 12
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "label": "PERCURSO",
+      "title": "Cada fase, novas descobertas.",
+      "printedRef": 14,
+      "filePage": 14,
+      "fileEnd": 33,
+      "printedPage": 13,
+      "subsections": [
+        {
+          "title": "Nossos segmentos.",
+          "filePage": 16,
+          "printedPage": 15
+        },
+        {
+          "title": "Horários, chegadas e saídas.",
+          "filePage": 21,
+          "printedPage": 20
+        },
+        {
+          "title": "Os pequenos combinados que fazem a vida escolar acontecer.",
+          "filePage": 23,
+          "printedPage": 22
+        }
+      ]
+    },
+    {
+      "id": "04",
+      "label": "PERTENCES",
+      "title": "Achados e Perdidos",
+      "printedRef": 35,
+      "filePage": 34,
+      "fileEnd": 37,
+      "printedPage": 33,
+      "subsections": [
+        {
+          "title": "Organização dos pertences.",
+          "filePage": 36,
+          "printedPage": 35
+        },
+        {
+          "title": "Cuidar de si, do outro e do ambiente.",
+          "filePage": 36,
+          "printedPage": 35
+        }
+      ]
+    },
+    {
+      "id": "05",
+      "label": "CUIDADO",
+      "title": "Cuidar e acolher é criar um ambiente seguro para crescer.",
+      "printedRef": 38,
+      "filePage": 38,
+      "fileEnd": 47,
+      "printedPage": 37,
+      "subsections": [
+        {
+          "title": "Enfermaria e cuidados importantes.",
+          "filePage": 39,
+          "printedPage": 38
+        }
+      ]
+    },
+    {
+      "id": "06",
+      "label": "ALIMENTAÇÃO",
+      "title": "Nossa relação com a alimentação.",
+      "printedRef": 50,
+      "filePage": 48,
+      "fileEnd": 49,
+      "printedPage": 47,
+      "subsections": [
+        {
+          "title": "Lanches, refeições e hábitos saudáveis.",
+          "filePage": 49,
+          "printedPage": 48
+        }
+      ]
+    },
+    {
+      "id": "07",
+      "label": "CONVIVÊNCIA",
+      "title": "Convivência Antibullying.",
+      "printedRef": 53,
+      "filePage": 50,
+      "fileEnd": 54,
+      "printedPage": 49,
+      "subsections": [
+        {
+          "title": "Nossa cultura de cuidado e prevenção ao bullying.",
+          "filePage": 51,
+          "printedPage": 50
+        }
+      ]
+    },
+    {
+      "id": "08",
+      "label": "CELEBRAR",
+      "title": "Celebrar também faz parte da nossa jornada.",
+      "printedRef": 60,
+      "filePage": 55,
+      "fileEnd": 57,
+      "printedPage": 54,
+      "subsections": [
+        {
+          "title": "Comemorações de aniversários.",
+          "filePage": 56,
+          "printedPage": 55
+        }
+      ]
+    },
+    {
+      "id": "09",
+      "label": "EXPERIÊNCIAS",
+      "title": "Experiências que ampliam o aprendizado.",
+      "printedRef": 64,
+      "filePage": 58,
+      "fileEnd": 71,
+      "printedPage": 57,
+      "subsections": [
+        {
+          "title": "Projetos pedagógicos.",
+          "filePage": 59,
+          "printedPage": 58
+        },
+        {
+          "title": "Cultura, esporte e atividades que ampliam a aprendizagem.",
+          "filePage": 66,
+          "printedPage": 65
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "label": "COMUNICAÇÃO",
+      "title": "Juntos, construímos cada capítulo dessa história.",
+      "printedRef": 78,
+      "filePage": 72,
+      "fileEnd": 78,
+      "printedPage": 71,
+      "subsections": [
+        {
+          "title": "Canais de comunicação.",
+          "filePage": 73,
+          "printedPage": 72
+        },
+        {
+          "title": "Como acompanhar essa jornada.",
+          "filePage": 78,
+          "printedPage": 77
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "label": "NOSSA EQUIPE",
+      "title": "Nossa equipe está mais perto de você.",
+      "printedRef": 86,
+      "filePage": 79,
+      "fileEnd": 86,
+      "printedPage": 78,
+      "subsections": [
+        {
+          "title": "Nosso time Montessori.",
+          "filePage": 80,
+          "printedPage": 79
+        }
+      ]
+    }
+  ]
+}
