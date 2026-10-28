@@ -14,10 +14,9 @@ const mm = (v) => v * MM * 1; // mm → unidades do mundo
 
 export function buildBookModel() {
   const pageCount = manifest.pageCount;
-  if (pageCount % 2 !== 0) {
-    throw new Error(`O PDF precisa ter número par de páginas (tem ${pageCount}).`);
-  }
-  const N = pageCount / 2;
+  // Uma face virtual vazia antes da contracapa aceita PDFs ímpares sem editá-los.
+  const odd = pageCount % 2 !== 0;
+  const N = Math.ceil(pageCount / 2);
   const scale = BOOK_SPEC.thicknessScale;
   const paper = mm(BOOK_SPEC.paperCaliperMm) * scale;
   const cover = mm(BOOK_SPEC.coverCaliperMm) * scale;
@@ -32,8 +31,8 @@ export function buildBookModel() {
 
   const leaves = thickness.map((t, n) => ({
     index: n,
-    frontPage: 2 * n + 1,
-    backPage: 2 * n + 2,
+    frontPage: odd && n === N - 1 ? null : 2 * n + 1,
+    backPage: odd && n === N - 1 ? pageCount : 2 * n + 2,
     isCover: n === 0 || n === N - 1,
     thickness: t,
   }));
@@ -71,6 +70,7 @@ export function leafZ(model, n, p) {
 
 /** Posição (0..N) em que a página `filePage` do arquivo fica visível. */
 export function positionForFilePage(filePage) {
+  if (filePage === manifest.pageCount) return Math.ceil(manifest.pageCount / 2);
   return Math.floor(filePage / 2);
 }
 
@@ -83,7 +83,7 @@ export const TOTAL_PRINTED = manifest.lastPrintedFilePage - manifest.printedOffs
 
 /** Texto "Páginas 14–15 de 84", "Capa" ou "Contracapa". */
 export function pageIndicatorLabel(p) {
-  const N = manifest.pageCount / 2;
+  const N = Math.ceil(manifest.pageCount / 2);
   if (p <= 0) return { primary: "Capa", secondary: null };
   if (p >= N) return { primary: "Contracapa", secondary: null };
   const left = printedNumber(2 * p);
@@ -94,7 +94,7 @@ export function pageIndicatorLabel(p) {
 
 /** Capítulo ativo para a posição p (null = abertura). */
 export function chapterForPosition(p) {
-  const N = manifest.pageCount / 2;
+  const N = Math.ceil(manifest.pageCount / 2);
   if (p <= 0) return { kind: "cover" };
   if (p >= N) return { kind: "back" };
   const ref = Math.min(2 * p + 1, manifest.pageCount); // página direita
@@ -111,7 +111,7 @@ export function chapterForPosition(p) {
 }
 
 export function navItems() {
-  const N = manifest.pageCount / 2;
+  const N = Math.ceil(manifest.pageCount / 2);
   return [
     { id: "capa", label: "CAPA", aria: "Ir para a capa", position: 0 },
     {

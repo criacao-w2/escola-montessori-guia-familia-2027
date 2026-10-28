@@ -1,11 +1,12 @@
 import { useCallback, useEffect } from "react";
 import { useAtom, useAtomValue } from "jotai";
 import manifest from "../../data/book-manifest.json";
+import { positionForFilePage } from "../../lib/bookModel";
 import { pageAtom, tocOpenAtom } from "../../state/bookState";
 import { sendViewCommand } from "../../state/viewBus";
 import { focusSideAtom, isPortrait, readingAtom } from "../../state/reading";
 
-const LEAVES = manifest.pageCount / 2;
+const LEAVES = Math.ceil(manifest.pageCount / 2);
 
 /**
  * Navegação sincronizada: o destino é sempre um único átomo (pageAtom).
@@ -40,7 +41,7 @@ export function useBookNavigation() {
   /** Vai até a página do arquivo e, no celular em modo leitura, enquadra o lado certo. */
   const goToFilePage = useCallback(
     (filePage) => {
-      setPage(Math.min(LEAVES, Math.max(0, Math.floor(filePage / 2))));
+      setPage(Math.min(LEAVES, Math.max(0, positionForFilePage(filePage))));
       setSide(filePage % 2 === 0 ? "left" : "right");
     },
     [setPage, setSide]

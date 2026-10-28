@@ -23,6 +23,11 @@ Para gerar a versão de publicação: `npm run build` (a pasta `dist/` é o site
 
 A busca lê o texto do próprio PDF, então correções de texto aparecem nela automaticamente.
 
+A versão final contém 99 páginas e 12 capítulos. PDFs com paginação ímpar usam uma face
+virtual vazia antes da contracapa no livro 3D, sem acrescentar páginas ao arquivo PDF.
+Após atualizar a paginação, confira o modelo com `npm run check:book` e gere o site com
+`npm run build`.
+
 ## Onde ajustar
 
 | O quê | Arquivo |

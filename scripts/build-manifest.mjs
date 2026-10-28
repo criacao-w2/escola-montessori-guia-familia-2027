@@ -54,7 +54,12 @@ const compactOf = (m) => norm(m).replace(/[^a-z0-9]/g, "");
 const findFrom = (phrases, from, to, maxWords = Infinity) => {
   for (let n = from; n <= to; n++) {
     const pg = pages[n - 1];
-    if (pg.words <= maxWords && phrases.some((m) => pg.compact.includes(compactOf(m)))) return n;
+    if (pg.words <= maxWords && phrases.some((m) => {
+      if (pg.compact.includes(compactOf(m))) return true;
+      // Títulos diagramados em caixas separadas podem vir em outra ordem no PDF.
+      const terms = norm(m).split(/\s+/).map(compactOf).filter((t) => t.length >= 3);
+      return maxWords <= 40 && terms.length > 1 && terms.every((t) => pg.compact.includes(t));
+    })) return n;
   }
   return null;
 };
@@ -62,7 +67,7 @@ const findFrom = (phrases, from, to, maxWords = Infinity) => {
 // O Sumário ocupa as páginas que contêm "sumario" logo no início
 const summaryPage = findFrom(["sumario"], 2, 8);
 let summaryLast = summaryPage;
-while (summaryLast + 1 <= pageCount && pages[summaryLast].text.startsWith("escola montessori guia da familia 2027 sumario")) summaryLast++;
+while (summaryLast + 1 <= Math.min(8, pageCount) && pages[summaryLast].compact.includes("sumario")) summaryLast++;
 const searchFrom = summaryLast + 1;
 
 const warnings = [];

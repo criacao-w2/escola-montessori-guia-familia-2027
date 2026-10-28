@@ -11,7 +11,7 @@ let runtime = null;
 function regionFor(pageNo) {
   const oh = Math.min(BOOK_SPEC.coverOverhangMm, 3);
   const last = manifest.pageCount;
-  if (pageNo === 1 || pageNo === last - 1) return { left: 0, right: 0, top: oh, bottom: oh }; // frente da folha (lombada à esquerda)
+  if (pageNo === 1 || (last % 2 === 0 && pageNo === last - 1)) return { left: 0, right: 0, top: oh, bottom: oh }; // frente da folha (lombada à esquerda)
   if (pageNo === 2 || pageNo === last) return { left: 0, right: 0, top: oh, bottom: oh }; // verso (lombada à direita)
   return {};
 }
